@@ -50,6 +50,18 @@ void ofxBox2dJoint::setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2
 }
 
 //----------------------------------------
+void ofxBox2dJoint::setupRevolute(b2World* b2world, b2Body* body1, b2Body* body2) {
+        setWorld(b2world);
+        b2RevoluteJointDef jointDef;
+        //b2Vec2 anchorPoint = body1->GetWorldCenter();
+    	jointDef.Initialize(body1, body2, body1->GetWorldCenter());
+        joint                                           = (b2DistanceJoint*)world->CreateJoint(&jointDef);
+
+        alive                                           = true;
+}
+
+
+//----------------------------------------
 void ofxBox2dJoint::setWorld(b2World* w) {
 	if(w == NULL) {
 		ofLog(OF_LOG_NOTICE, "ofxBox2dJoint :: setWorld : - box2d world needed -");	

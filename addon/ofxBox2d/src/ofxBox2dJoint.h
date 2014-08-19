@@ -24,7 +24,8 @@ public:
 	void setWorld(b2World * w);
 	void setup(b2World* b2world, b2Body* body1, b2Body* body2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
 	void setup(b2World* b2world, b2Body* body1, b2Body* body2, b2Vec2 anchor1, b2Vec2 anchor2, float frequencyHz=4.f, float damping=.5f, bool bCollideConnected=true);
-	
+	void setupRevolute(b2World* b2world, b2Body* body1, b2Body* body2);
+
 	//----------------------------------------
 	bool isSetup();
 	void draw();
